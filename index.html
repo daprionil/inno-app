@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inno Admin App</title>
+    <link rel="shortcut icon" href="img/icon-inno.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gray-50">
+    <aside id="modalEmail" class="hidden">
+        <div class="fixed flex items-center justify-center w-screen h-full bg-black bg-opacity-50 modal-email">
+            <div class="w-full max-w-sm p-2 mx-2 bg-orange-200 rounded-md shadow-md sm:max-w-lg">
+                <div class="mb-2 text-center title">
+                    <p>Enviar Registro por Email</p>
+                </div>
+                <form action="" id="sendEmail">
+                    <div class="p-1 mb-3 bg-white rounded-lg shadow-sm info-registro" id="info-register"></div>
+                    <div class="input-email">
+                        <input type="email" name="email" placeholder="Correo Electrónico (Ej: correo@correo.com)">
+                    </div>
+                    <div class="my-1 text-center ctn-submit">
+                        <button type="submit" class="bg-cel-400">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </aside>
+    <div class="content-full-app">
+        <div class="header">
+            <header class="grid items-center justify-between grid-cols-3 p-1 bg-orange-300 sm:p-2 justify-items-center">
+                <div class="icon-title">
+                    <div class="img">
+                        <img src="img/icon-inno.png" class="w-16 sm:w-20" title="Logo Inno" alt="">
+                    </div>
+                </div>
+                <div class="p-1 text-sm text-center text-white bg-orange-100 bg-opacity-50 sm:text-base company-data rounded-xl">
+                    <p id="companyName" class="font-bold border-b border-orange-700">Default</p>
+                    <p id="companyId"><span class="font-bold">NIT: </span>NaN</p>
+                </div>
+                <div class="reset-app">
+                    <button class="bg-red-600 btn" id="restarApp">Restart App</button>
+                </div>
+            </header>
+        </div>
+        <div class="mx-1 main">
+            <main>
+                <div class="my-2 view-total-count">
+                    <div class="w-full max-w-sm p-2 mx-auto text-center bg-gray-100 count rounded-xl">
+                        <div class="border-b-2 border-cel-400">
+                            <p class="text-3xl">Total</p>
+                            <p id="numberCount" class="my-2 text-3xl rounded-md ">0<span class="font-medium"> $</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full max-w-2xl mx-auto form">
+                    <details class="mx-1 transition duration-200 bg-gray-300 border border-transparent rounded-md shadow-sm hover:bg-gray-200" open>
+                        <summary class="flex justify-center font-medium text-center cursor-pointer">
+                            <p class="px-2 m-1 text-lg border-b border-cel-400">Agregar un Registro</p>
+                        </summary>
+                        <div class="form">
+                            <form action="" id="addNewRegistro" class="bg-gray-100">
+                                <p class="px-2 m-1 font-semibold">¡Llena El Formulario!</p>
+                                <div class="grid items-center grid-cols-2 px-2 ctn-form">
+                                    <div class="col-span-2 m-1 name-registro">
+                                        <input type="text" name="title" placeholder="Titulo del Registro">
+                                    </div>
+                                    <div class="col-span-2 m-1 text-registro">
+                                        <textarea placeholder="Descripción de tu Registro" name="descrip" cols="30" rows="10" class="h-24 resize-none"></textarea>
+                                    </div>
+                                    <div class="m-1 fecha-registro">
+                                        <input type="date" name="date" class="text-right">
+                                    </div>
+                                    <div class="m-1 cash-registro">
+                                        <input type="number" name="price" placeholder="$0.0">
+                                    </div>
+                                    <div class="m-1 select-registro">
+                                        <select name="type" class="w-full p-1 text-center rounded-md shadow-md bg-bg-none">
+                                            <option value="">Selecciona el tipo</option>
+                                            <option value="ingreso">Ingreso</option>
+                                            <option value="egreso">Egreso</option>
+                                        </select>
+                                    </div>
+                                    <div class="m-1 text-center btn-submit">
+                                        <button type="submit" class="bg-cel-400">Agregar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </details>
+                </div>
+                <div class="max-w-2xl mx-auto mt-4 history-registros">
+                    <div class="p-1 mx-1 text-white bg-gray-500 rounded-md ctn-history">
+                        <p class="px-1 border-b border-orange-100">Historial de Registros</p>
+                        <div class="content-registros" id="boxRegistrosHtml"></div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="js/app.js" type="module"></script>
+</body>
+</html>
