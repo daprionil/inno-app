@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+button {
+    @apply px-4 py-2 font-semibold text-white transition sm:text-base text-sm duration-300 border border-transparent rounded-md outline-none hover:text-black hover:border-white
+}
+input,
+textarea{
+    @apply w-full p-1 rounded-md outline-none bg-none shadow-md
+}
